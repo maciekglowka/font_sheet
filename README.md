@@ -1,7 +1,9 @@
-A simple tool converting TTF font files into bitmap sprite sheets.
-The resulting atlas is aligned to ASCII indices. (eg. capital 'A' will be placed as sprite no. 65)
+### A simple tool converting TTF font files into bitmap sprite sheets.
+
+The resulting atlas is aligned to ASCII indices. Capital 'A' will be placed as sprite no. 65 etc.
 
 
+```
 Usage: font_sheet [OPTIONS] <PATH> <SIZE>
 
 Arguments:
@@ -16,3 +18,4 @@ Options:
       --h-gap <H_GAP>                  Horizontal gap [default: 0]
   -h, --help                           Print help
   -V, --version                        Print version
+```
