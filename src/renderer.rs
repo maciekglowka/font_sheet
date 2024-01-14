@@ -41,16 +41,17 @@ impl Renderer {
     pub fn height(&self) -> u32 {
         self.height
     }
-    pub fn glyph(&self, c: char) -> GlyphData {
+    pub fn glyph(&self, c: char) -> Option<GlyphData> {
+        if !self.font.has_glyph(c) { return None }
         let (m, b) = self.font.rasterize(c, self.size);
 
         let y = m.height as i32 - self.ascent as i32 + m.ymin;
-        GlyphData {
+        Some(GlyphData {
             buf: b,
             x: m.xmin,
             y,
             w: m.width as u32,
             h: m.height as u32
-        }
+        })
     }
 }
